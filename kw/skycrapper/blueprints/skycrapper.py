@@ -1,11 +1,14 @@
 from collections import defaultdict
 from datetime import datetime, timedelta
 
+import arrow
 from quart import Blueprint
 from quart import current_app
 from quart import make_response
 
 from ..settings import STALL_MAPPING
+
+REVERSE_MAPPING = {value: key for key, value in STALL_MAPPING.items()}
 
 skycrapper = Blueprint('skycrapper', __name__)
 
@@ -40,10 +43,10 @@ async def test():
     data = cur.fetchall()
     turdpile = defaultdict(float)
     for stall, t_shit in data:
-        turd_age = (datetime.utcnow() - t_shit)
+        turd_age = (arrow.get(datetime.utcnow()) - arrow.get(t_shit))
         if turd_age < timedelta(hours=12):
-            turdpile[stall] += turd_age.hours ** -1
-    return await make_response(turdpile)
+            turdpile[REVERSE_MAPPING[stall]] += (turd_age.seconds / 60) ** -1
+    return await make_response(str(dict(turdpile)))
 
 
 @skycrapper.route('/show', methods=['GET'])
