@@ -1,4 +1,5 @@
 from datetime import datetime
+from ..settings import STALL_MAPPING
 
 from quart import Blueprint
 from quart import current_app
