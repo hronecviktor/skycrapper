@@ -1,0 +1,7 @@
+STALL_MAPPING = {
+    "FAIRY": 0,
+    "AIRWICK": 1,
+    "NESCAFE": 2,
+    "ARIEL": 3,
+    "FINISH": 4  # JUST FINISH ALREADY
+}
