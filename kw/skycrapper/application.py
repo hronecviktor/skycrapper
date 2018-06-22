@@ -11,7 +11,7 @@ def create_app():
 
     @app.before_first_request
     async def init_sessions():
-        app.db = sqlite3.connect(':memory:')
+        app.db = sqlite3.connect('/srv/skycrapper/db')
 
     gunicorn_logger = logging.getLogger('gunicorn.error')
     app.logger.handlers = gunicorn_logger.handlers

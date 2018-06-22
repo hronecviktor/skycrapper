@@ -9,6 +9,7 @@ COPY *requirements* /srv/skycrapper/
 RUN pip install --no-cache-dir -r requirements.txt
 
 COPY kw /srv/skycrapper/kw/
+COPY db /srv/skycrapper/db
 
 CMD ["gunicorn", "--worker-class", "quart.worker.GunicornWorker", "--workers", \
 "2", "--bind", "0.0.0.0:80", "--log-level", "debug", "kw.skycrapper:app"]
