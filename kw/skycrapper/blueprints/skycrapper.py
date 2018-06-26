@@ -44,7 +44,7 @@ async def test():
     turdpile = defaultdict(float)
     for stall, t_shit in data:
         turd_age = (arrow.get(datetime.utcnow()) - arrow.get(t_shit))
-        if turd_age < timedelta(hours=12):
+        if turd_age.seconds and turd_age < timedelta(hours=12):
             turdpile[REVERSE_MAPPING[stall]] += (turd_age.seconds / 60) ** -1
     return await make_response(str(dict(turdpile)))
 
