@@ -68,7 +68,7 @@
       }
 
       const update = () => {
-        d3.json('http://localhost:8080/data').then(data => {
+        d3.json('https://api.skycrapper.hronec.net/data').then(data => {
           const clean_data = {
             ...default_data,
             ...data,
