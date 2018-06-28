@@ -1,5 +1,6 @@
 from collections import defaultdict
 from datetime import datetime, timedelta
+import json
 
 import arrow
 from quart import Blueprint
@@ -46,7 +47,7 @@ async def test():
         turd_age = (arrow.get(datetime.utcnow()) - arrow.get(t_shit))
         if turd_age.seconds and turd_age < timedelta(hours=12):
             turdpile[REVERSE_MAPPING[stall]] += (turd_age.seconds / 60) ** -1
-    return await make_response(str(dict(turdpile)))
+    return await make_response(json.dumps(dict(turdpile)))
 
 
 @skycrapper.route('/show', methods=['GET'])
@@ -57,4 +58,4 @@ async def show():
     """
     cur = current_app.db.cursor()
     cur.execute('''SELECT * FROM shits''')
-    return await make_response(str(cur.fetchall()))
+    return await make_response(json.dumps(cur.fetchall()))
