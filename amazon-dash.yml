@@ -1,0 +1,32 @@
+settings:
+  delay: 10
+devices:
+  00:FC:8B:68:6C:23:
+   name: fairy
+   url: 'https://api.skycrapper.hronec.net/shit/FAIRY'
+   method: post
+   headers: {"authorization": "Basic c2t5Y3JhcHBlcjp3ZWxsYWludHRoaXNjcmFwcHk="}
+
+  6C:56:97:C3:CC:19:
+   name: ariel  
+   url: 'https://api.skycrapper.hronec.net/shit/ARIEL'
+   method: post
+   headers: {"authorization": "Basic c2t5Y3JhcHBlcjp3ZWxsYWludHRoaXNjcmFwcHk="}
+
+  6C:56:97:0F:A1:34:
+   name: finish  
+   url: 'https://api.skycrapper.hronec.net/shit/FINISH'
+   method: post
+   headers: {"authorization": "Basic c2t5Y3JhcHBlcjp3ZWxsYWludHRoaXNjcmFwcHk="}
+
+  38:F7:3D:95:38:0A:
+   name: airwick
+   url: 'https://api.skycrapper.hronec.net/shit/AIRWICK'
+   method: post
+   headers: {"authorization": "Basic c2t5Y3JhcHBlcjp3ZWxsYWludHRoaXNjcmFwcHk="}
+
+  FC:65:DE:73:46:1C:
+   name: nescafe  
+   url: 'https://api.skycrapper.hronec.net/shit/NESCAFE'
+   method: post
+   headers: {"authorization": "Basic c2t5Y3JhcHBlcjp3ZWxsYWludHRoaXNjcmFwcHk="}
